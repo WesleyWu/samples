@@ -17,7 +17,7 @@ func main() {
 	s.Group("/", func(group *ghttp.RouterGroup) {
 		group.Middleware(middleware.ResponseJsonWrapper)
 		group.Bind(
-			service.NewOrderService(client, "statestore"),
+			service.NewOrderService(client, "postgre"),
 		)
 	})
 	s.Run()
